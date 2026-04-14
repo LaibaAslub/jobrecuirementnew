@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #06cc99;
+  --color-brand-secondary: #05ae82;
+  --color-accent-rose: #f43f5e;
+  --color-accent-emerald: #10b981;
+  --color-accent-amber: #f59e0b;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Remap Indigo scale to Brand Teal */
+  --color-indigo-50: #ecfdf8;
+  --color-indigo-100: #ccfcf0;
+  --color-indigo-200: #99f9e1;
+  --color-indigo-300: #5ee9c8;
+  --color-indigo-400: #26d2aa;
+  --color-indigo-500: #06cc99;
+  --color-indigo-600: #05ae82;
+  --color-indigo-700: #048d6a;
+  --color-indigo-800: #036d52;
+  --color-indigo-900: #024c3a;
+  --color-indigo-950: #012b21;
+
+  /* Remap Blue scale to Brand Teal as well per user request */
+  --color-blue-50: #ecfdf8;
+  --color-blue-100: #ccfcf0;
+  --color-blue-200: #99f9e1;
+  --color-blue-300: #5ee9c8;
+  --color-blue-400: #26d2aa;
+  --color-blue-500: #06cc99;
+  --color-blue-600: #05ae82;
+  --color-blue-700: #048d6a;
+  --color-blue-800: #036d52;
+  --color-blue-900: #024c3a;
+  --color-blue-950: #012b21;
+}
+
+:root {
+  --background: #fdfdfd;
+  --foreground: #0f172a;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #06cc99 0%, #05ae82 50%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }

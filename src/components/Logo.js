@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { NcaiLogo } from './NcaiLogo';
 import Link from 'next/link';
 
 export function Logo({ className = '', showText = true, size = 'md' }) {
@@ -14,13 +14,7 @@ export function Logo({ className = '', showText = true, size = 'md' }) {
   return (
     <Link href="/" className={`flex items-center gap-3 ${className}`}>
       <div className="relative overflow-hidden rounded-xl bg-white p-1">
-        <Image
-          src="/logo.png"
-          alt="AccuBooks Logo"
-          width={pixelSize}
-          height={pixelSize}
-          className="object-contain"
-        />
+        <NcaiLogo size={pixelSize} />
       </div>
       {showText && (
         <div className="flex flex-col">

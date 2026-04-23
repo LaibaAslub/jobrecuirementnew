@@ -313,7 +313,7 @@ export default function Home() {
            </div>
            <div className="flex items-center space-x-3">
               <div className="w-8 h-8 rounded-full bg-[#06cc99]/20 flex items-center justify-center text-[#06cc99] font-bold">📧</div>
-              <p className="text-xs">info@recruitme.app</p>
+              <p className="text-xs">info@recruitme.com</p>
            </div>
            <div className="flex items-center space-x-3">
               <div className="w-8 h-8 rounded-full bg-[#06cc99]/20 flex items-center justify-center text-[#06cc99] font-bold">📞</div>

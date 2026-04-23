@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "RecruitMe | Online Recruitment System",
-  description: "Modern recruitment platform for employers and job seekers.",
+  description: "Secure and intelligent recruitment platform for modern organizations.",
 };
 
 export default function RootLayout({ children }) {

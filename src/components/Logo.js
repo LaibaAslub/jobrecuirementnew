@@ -19,10 +19,10 @@ export function Logo({ className = '', showText = true, size = 'md' }) {
       {showText && (
         <div className="flex flex-col">
           <span className={`font-bold tracking-tight text-foreground ${size === 'lg' || size === 'xl' ? 'text-2xl' : 'text-lg'}`}>
-            AccuBooks
+            RecruitMe
           </span>
           <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium">
-            Recruitment System
+            Online Recruitment System
           </span>
         </div>
       )}

@@ -55,7 +55,7 @@ export default function SignupPage() {
         <div className="text-center mb-8 flex flex-col items-center">
           <Logo size="lg" className="mb-6" />
           <h2 className="text-3xl font-bold text-slate-800">Create Account</h2>
-          <p className="text-slate-500 mt-2">Join NCAI today</p>
+          <p className="text-slate-500 mt-2">Join RecruitMe today</p>
         </div>
 
         {/* Role Toggle */}

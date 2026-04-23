@@ -177,7 +177,7 @@ export default function Home() {
            <div>
               <h2 className="text-5xl font-black mb-8 leading-tight tracking-tighter">Success <span className="text-[#06cc99] italic">Stories</span> From Our Global Community.</h2>
               <p className="text-slate-400 text-lg font-medium leading-relaxed mb-12">
-                "Finding a role that aligned with my values was hard until I tried NCAI. The matching process was surprisingly accurate, and I had three interviews within the first week."
+                "Finding a role that aligned with my values was hard until I tried RecruitMe. The matching process was surprisingly accurate, and I had three interviews within the first week."
               </p>
               <div className="flex items-center space-x-4">
                  <div className="w-12 h-12 rounded-full bg-rose-500"></div>
@@ -313,7 +313,7 @@ export default function Home() {
            </div>
            <div className="flex items-center space-x-3">
               <div className="w-8 h-8 rounded-full bg-[#06cc99]/20 flex items-center justify-center text-[#06cc99] font-bold">📧</div>
-              <p className="text-xs">info@ncai.app</p>
+              <p className="text-xs">info@recruitme.app</p>
            </div>
            <div className="flex items-center space-x-3">
               <div className="w-8 h-8 rounded-full bg-[#06cc99]/20 flex items-center justify-center text-[#06cc99] font-bold">📞</div>

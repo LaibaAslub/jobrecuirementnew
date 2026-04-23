@@ -16,7 +16,7 @@ export function Logo({ className = '', showText = true, size = 'md' }) {
       <div className="relative overflow-hidden rounded-xl bg-white p-1">
         <Image
           src="/logo.png"
-          alt="NCAI Logo"
+          alt="RecruitMe Logo"
           width={pixelSize}
           height={pixelSize}
           className="object-contain"
@@ -25,7 +25,7 @@ export function Logo({ className = '', showText = true, size = 'md' }) {
       {showText && (
         <div className="flex flex-col">
           <span className={`font-bold tracking-tight text-foreground ${size === 'lg' || size === 'xl' ? 'text-2xl' : 'text-lg'}`}>
-            NCAI
+            RecruitMe
           </span>
           <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium">
             Recruitment System

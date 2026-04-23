@@ -5,6 +5,7 @@ import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Building2, UserCheck } from 'lucide-react';
+import { Logo } from '@/components/Logo';
 
 export default function SignupPage() {
   const [formData, setFormData] = useState({
@@ -51,9 +52,10 @@ export default function SignupPage() {
   return (
     <div className="min-h-[80vh] flex items-center justify-center px-4 py-12">
       <div className="max-w-md w-full bg-white rounded-3xl shadow-xl p-8 border border-indigo-50">
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 flex flex-col items-center">
+          <Logo size="lg" className="mb-6" />
           <h2 className="text-3xl font-bold text-slate-800">Create Account</h2>
-          <p className="text-slate-500 mt-2">Join RecruitMe today</p>
+          <p className="text-slate-500 mt-2">Join NCAI today</p>
         </div>
 
         {/* Role Toggle */}

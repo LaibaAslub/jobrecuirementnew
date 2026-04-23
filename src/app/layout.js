@@ -7,8 +7,8 @@ import Navbar from "@/components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "RecruitMe | Online Employee Recruitment System",
-  description: "Modern recruitment platform for employers and job seekers.",
+  title: "NCAI | Online Recruitment System",
+  description: "Secure and intelligent recruitment platform for modern organizations.",
 };
 
 export default function RootLayout({ children }) {

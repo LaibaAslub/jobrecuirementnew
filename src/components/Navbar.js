@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { Building2 } from 'lucide-react';
+import { Logo } from './Logo';
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -20,9 +21,7 @@ const Navbar = () => {
   return (
     <nav className="glass sticky top-0 z-50 px-6 py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#06cc99] to-[#05ae82] tracking-tighter">
-          RecruitMe
-        </Link>
+        <Logo />
 
         <div className="flex items-center space-x-6 text-sm font-black uppercase tracking-widest">
           <Link href="/" className="hover:text-[#06cc99] transition-colors">Home</Link>

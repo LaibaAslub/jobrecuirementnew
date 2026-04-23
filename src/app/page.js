@@ -4,6 +4,7 @@ import { useData } from '@/context/DataContext';
 import JobCard from '@/components/JobCard';
 import Link from 'next/link';
 import { UserCheck, Globe, Users, Star } from 'lucide-react';
+import { Logo } from '@/components/Logo';
 
 export default function Home() {
   const { jobs } = useData();
@@ -176,7 +177,7 @@ export default function Home() {
            <div>
               <h2 className="text-5xl font-black mb-8 leading-tight tracking-tighter">Success <span className="text-[#06cc99] italic">Stories</span> From Our Global Community.</h2>
               <p className="text-slate-400 text-lg font-medium leading-relaxed mb-12">
-                "Finding a role that aligned with my values was hard until I tried RecruitMe. The matching process was surprisingly accurate, and I had three interviews within the first week."
+                "Finding a role that aligned with my values was hard until I tried NCAI. The matching process was surprisingly accurate, and I had three interviews within the first week."
               </p>
               <div className="flex items-center space-x-4">
                  <div className="w-12 h-12 rounded-full bg-rose-500"></div>
@@ -259,12 +260,7 @@ export default function Home() {
       <footer className="bg-slate-950 pt-24 pb-12 text-slate-300">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
            <div className="lg:col-span-2">
-              <div className="flex items-center space-x-2 mb-6">
-                 <div className="w-8 h-8 bg-[#06cc99] rounded-lg flex items-center justify-center">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                 </div>
-                 <span className="text-2xl font-black text-white tracking-tighter">FindJobs</span>
-              </div>
+              <Logo />
               <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-xs">
                 Lorem ipsum dolor sit amet consectetur. Egestas porta consectetur egestas porta sollicitudin accumsan tempor egestas vestibulum lorem placerat morbi vulputate ut elit sit elementum diam blandit.
               </p>
@@ -317,7 +313,7 @@ export default function Home() {
            </div>
            <div className="flex items-center space-x-3">
               <div className="w-8 h-8 rounded-full bg-[#06cc99]/20 flex items-center justify-center text-[#06cc99] font-bold">📧</div>
-              <p className="text-xs">info@jobrooms.com</p>
+              <p className="text-xs">info@ncai.app</p>
            </div>
            <div className="flex items-center space-x-3">
               <div className="w-8 h-8 rounded-full bg-[#06cc99]/20 flex items-center justify-center text-[#06cc99] font-bold">📞</div>

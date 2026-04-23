@@ -16,7 +16,7 @@ export function Logo({ className = '', showText = true, size = 'md' }) {
       <div className="relative overflow-hidden rounded-xl bg-white p-1">
         <Image
           src="/logo.png"
-          alt="NCAI Logo"
+          alt="AccuBooks Logo"
           width={pixelSize}
           height={pixelSize}
           className="object-contain"

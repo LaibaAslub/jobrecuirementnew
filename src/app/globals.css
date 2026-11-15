@@ -1,73 +1,332 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #06cc99;
-  --color-brand-secondary: #05ae82;
+  --color-brand-primary: #006745;
+  --color-brand-secondary: #046648;
+  --color-brand-navy: #213145;
+  --color-brand-dark: #142438;
   --color-accent-rose: #f43f5e;
-  --color-accent-emerald: #10b981;
+  --color-accent-emerald: #006745;
   --color-accent-amber: #f59e0b;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
-  /* Remap Indigo scale to Brand Teal */
-  --color-indigo-50: #ecfdf8;
-  --color-indigo-100: #ccfcf0;
-  --color-indigo-200: #99f9e1;
-  --color-indigo-300: #5ee9c8;
-  --color-indigo-400: #26d2aa;
-  --color-indigo-500: #06cc99;
-  --color-indigo-600: #05ae82;
-  --color-indigo-700: #048d6a;
-  --color-indigo-800: #036d52;
-  --color-indigo-900: #024c3a;
-  --color-indigo-950: #012b21;
-
-  /* Remap Blue scale to Brand Teal as well per user request */
-  --color-blue-50: #ecfdf8;
-  --color-blue-100: #ccfcf0;
-  --color-blue-200: #99f9e1;
-  --color-blue-300: #5ee9c8;
-  --color-blue-400: #26d2aa;
-  --color-blue-500: #06cc99;
-  --color-blue-600: #05ae82;
-  --color-blue-700: #048d6a;
-  --color-blue-800: #036d52;
-  --color-blue-900: #024c3a;
-  --color-blue-950: #012b21;
+  /* Remap Indigo scale to Brand Emerald */
+  --color-indigo-50: #ebfbf3;
+  --color-indigo-100: #d1fae5;
+  --color-indigo-200: #a7f3d0;
+  --color-indigo-300: #6ee7b7;
+  --color-indigo-400: #34d399;
+  --color-indigo-500: #10b981;
+  --color-indigo-600: #059669;
+  --color-indigo-700: #047857;
+  --color-indigo-800: #065f46;
+  --color-indigo-900: #006745;
+  --color-indigo-950: #022c1f;
 }
 
 :root {
-  --background: #fdfdfd;
-  --foreground: #0f172a;
+  --background: #ffffff;
+  --foreground: #111827;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   color: var(--foreground);
   background: var(--background);
   min-height: 100vh;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #06cc99 0%, #05ae82 50%, #10b981 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #006745;
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ═════════════════════════════════════════════
+   KEYFRAMES & SCROLL-TRIGGERED REVEAL ANIMATIONS
+═════════════════════════════════════════════ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes marquee-ltr {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+/* ═════════════════════════════════════════════
+   SCROLL REVEAL UTILITIES (Triggered on Viewport Entry)
+═════════════════════════════════════════════ */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-down {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-left {
+  opacity: 0;
+  transform: translateX(24px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-right {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Revealed State */
+.reveal-on-scroll.is-revealed,
+.reveal-fade-down.is-revealed,
+.reveal-fade-left.is-revealed,
+.reveal-fade-right.is-revealed,
+.reveal-scale.is-revealed,
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Initial load entrance classes (for top-of-page hero elements) */
+.anim-fade-up {
+  animation: fadeInUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-fade-down {
+  animation: fadeInDown 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-fade-left {
+  animation: fadeInLeft 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-fade-right {
+  animation: fadeInRight 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-fade-scale {
+  animation: fadeInScale 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .animate-fade-up {
-  animation: fadeUp 0.8s ease-out forwards;
+  animation: fadeInUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
+.animate-marquee,
+.animate-marquee-ltr {
+  animation: marquee-ltr 45s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-rtl {
+  animation: marquee-rtl 45s linear infinite;
+  will-change: transform;
+}
+
+.marquee-pause:hover .animate-marquee,
+.marquee-pause:hover .animate-marquee-ltr,
+.marquee-pause:hover .animate-marquee-rtl {
+  animation-play-state: paused;
+}
+
+/* Staggered Delay Utilities */
+.anim-delay-50  { animation-delay: 50ms; }
+.anim-delay-100 { animation-delay: 100ms; }
+.anim-delay-150 { animation-delay: 150ms; }
+.anim-delay-200 { animation-delay: 200ms; }
+.anim-delay-250 { animation-delay: 250ms; }
+.anim-delay-300 { animation-delay: 300ms; }
+.anim-delay-350 { animation-delay: 350ms; }
+.anim-delay-400 { animation-delay: 400ms; }
+.anim-delay-450 { animation-delay: 450ms; }
+.anim-delay-500 { animation-delay: 500ms; }
+.anim-delay-600 { animation-delay: 600ms; }
+.anim-delay-700 { animation-delay: 700ms; }
+.anim-delay-800 { animation-delay: 800ms; }
+
+.reveal-delay-50  { transition-delay: 50ms; }
+.reveal-delay-100 { transition-delay: 100ms; }
+.reveal-delay-150 { transition-delay: 150ms; }
+.reveal-delay-200 { transition-delay: 200ms; }
+.reveal-delay-250 { transition-delay: 250ms; }
+.reveal-delay-300 { transition-delay: 300ms; }
+.reveal-delay-350 { transition-delay: 350ms; }
+.reveal-delay-400 { transition-delay: 400ms; }
+.reveal-delay-450 { transition-delay: 450ms; }
+.reveal-delay-500 { transition-delay: 500ms; }
+.reveal-delay-600 { transition-delay: 600ms; }
+
+.delay-100 { animation-delay: 100ms; transition-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; transition-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; transition-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; transition-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; transition-delay: 500ms; }
+
+/* ═════════════════════════════════════════════
+   HOVER LIFTS & MICRO-INTERACTIONS
+═════════════════════════════════════════════ */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -10px rgba(0, 0, 0, 0.09), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+}
+
+.hover-lift-subtle {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-lift-subtle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px -6px rgba(0, 0, 0, 0.07);
+}
+
+/* Accessibility: respect user prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-on-scroll,
+  .reveal-fade-down,
+  .reveal-fade-left,
+  .reveal-fade-right,
+  .reveal-scale,
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Job card tag styles */
+.tag-green {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+.tag-blue {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+.tag-purple {
+  background: #f5f3ff;
+  color: #7c3aed;
+  border: 1px solid #ddd6fe;
+}
+.tag-orange {
+  background: #fff7ed;
+  color: #ea580c;
+  border: 1px solid #fed7aa;
+}
+.tag-rose {
+  background: #fff1f2;
+  color: #e11d48;
+  border: 1px solid #fecdd3;
+}
+.tag-gray {
+  background: #f9fafb;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}

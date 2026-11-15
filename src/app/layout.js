@@ -3,12 +3,13 @@ import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 import { DataProvider } from "@/context/DataContext";
 import Navbar from "@/components/Navbar";
+import ScrollAnimationObserver from "@/components/animations/ScrollAnimationObserver";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "RecruitMe | Online Recruitment System",
-  description: "Secure and intelligent recruitment platform for modern organizations.",
+  description: "RecruitMe: Online Recruitment System — connecting talent with opportunity.",
 };
 
 export default function RootLayout({ children }) {
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <AuthProvider>
           <DataProvider>
+            <ScrollAnimationObserver />
             <div className="flex flex-col min-h-screen">
               <Navbar />
               <main className="flex-grow">

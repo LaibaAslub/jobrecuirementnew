@@ -19,11 +19,10 @@ export default function LoginPage() {
     setLoading(true);
     try {
       const { user } = await login(formData.email, formData.password);
-      const meta = user?.user_metadata || {};
-      const role = formData.email === 'admin@gmail.com' ? 'admin' : (meta.role || 'user');
+      const role = user?.role || (formData.email.toLowerCase() === 'admin@gmail.com' ? 'admin' : (user?.user_metadata?.role || 'user'));
 
       if (role === 'admin') {
-        router.push('/dashboard');
+        router.push('/admin/dashboard');
       } else if (role === 'employer') {
         router.push('/employer/dashboard');
       } else {
@@ -95,11 +94,14 @@ export default function LoginPage() {
           </Link>
         </p>
 
-        <div className="mt-8 pt-8 border-t border-slate-100 flex flex-col items-center">
-          <p className="text-xs text-slate-400 mb-2 uppercase tracking-widest font-black">Official Admin Access</p>
-          <p className="text-sm font-black text-slate-700">Email: <span className="font-mono bg-slate-100 px-1">admin@gmail.com</span></p>
-          <p className="text-sm font-black text-slate-700">Pass: <span className="font-mono bg-slate-100 px-1">admin</span></p>
-          <p className="text-[10px] text-slate-400 mt-3 italic uppercase tracking-tighter">Only authorized personnel may access the admin panel.</p>
+        <div className="mt-8 pt-8 border-t border-slate-100 flex flex-col items-center text-center">
+          <div className="flex items-center space-x-2 mb-2">
+            <span className="w-2 h-2 rounded-full bg-[#06cc99] animate-pulse"></span>
+            <p className="text-xs text-slate-400 uppercase tracking-widest font-black">Authorized Portal</p>
+          </div>
+          <p className="text-xs text-slate-500 font-medium max-w-xs">
+            Admin dashboard and management tools are restricted to authorized administrators.
+          </p>
         </div>
       </div>
     </div>

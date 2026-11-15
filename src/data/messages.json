@@ -1,0 +1,53 @@
+[
+  {
+    "id": "msg_1793080484844_8aeja3d",
+    "sender_id": "admin_static_id",
+    "receiver_id": "e0000000-0000-0000-0000-000000000001",
+    "sender_email": "admin@gmail.com",
+    "receiver_email": "employer@jobbridge.com",
+    "sender_name": "System Admin",
+    "receiver_name": "TechCorp Solutions",
+    "sender_role": "admin",
+    "receiver_role": "employer",
+    "job_id": null,
+    "job_title": "Employer Administration Channel",
+    "application_id": null,
+    "content": "hi",
+    "is_read": false,
+    "created_at": "2026-10-27T05:54:44.844Z"
+  },
+  {
+    "id": "msg_1793080602223_1g07xyy",
+    "sender_id": "a67cb219-f70a-4962-88db-92e7c3b39e69",
+    "receiver_id": "employer@jobbridge.com",
+    "sender_email": "laiba@gmail.com",
+    "receiver_email": "employer@jobbridge.com",
+    "sender_name": "laiba",
+    "receiver_name": "newlunch",
+    "sender_role": "user",
+    "receiver_role": "employer",
+    "job_id": "4fbb767c-1566-4372-9166-fe51534978d9",
+    "job_title": "new sale",
+    "application_id": "f4ce79b4-15a6-4986-9334-7d9ab0ca5b71",
+    "content": "hi",
+    "is_read": false,
+    "created_at": "2026-10-27T05:56:42.223Z"
+  },
+  {
+    "id": "msg_1793188242255_qmlvii3",
+    "sender_id": "a43109c4-778c-4137-bb09-c3a9aa6a85c7",
+    "receiver_id": "admin@gmail.com",
+    "sender_email": "newdev@gmail.com",
+    "receiver_email": "admin@gmail.com",
+    "sender_name": "newdev",
+    "receiver_name": "System Admin",
+    "sender_role": "employer",
+    "receiver_role": "admin",
+    "job_id": null,
+    "job_title": "Portal Operator",
+    "application_id": null,
+    "content": "Could you please share your updated portfolio or code samples?",
+    "is_read": false,
+    "created_at": "2026-10-28T11:50:42.255Z"
+  }
+]
